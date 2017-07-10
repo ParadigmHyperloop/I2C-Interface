@@ -1,0 +1,2 @@
+#!/bin/bash
+g++ -o Example Example.cpp bus/I2CDevice.cpp bus/BusDevice.cpp

@@ -32,7 +32,7 @@ namespace exploringBB {
  * @brief This class is the parent of I2C and SPI devices, so that devices that use both
  * SPI and I2C interfaces can use those interfaces interchangeably. Because it contains
  * abstract methods, the child classes MUST implement the methods that are listed in this
- * class. This means that the
+ * class. 
  */
 class BusDevice {
 protected:

@@ -13,6 +13,12 @@
 
 using namespace std;
 using namespace exploringBB;
-int main(int argc, const char * argv[]) {
-    // test code
+
+int main() {
+
+        cout << "Starting I2C Example" << endl;
+        I2CDevice *busDevice = new I2CDevice(1,0x0b);
+        busDevice->write(39);
+
+
 }
