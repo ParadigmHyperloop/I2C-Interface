@@ -34,22 +34,7 @@
 #define BASEADDRESS 0x40
 #endif
 
-void read_reg(int handle, int addr, unsigned char reg, unsigned char *buf,
-              size_t len) {
-    i2c_write_read(handle, addr, &reg, 1, addr, buf, len);
-}
 
-void write_reg(int handle, int addr, int reg, int val) {
-    if (ioctl(handle,I2C_SLAVE,addr) < 0) {
-      perror("Failed to change I2C Address: ");
-      return;
-    }
-    printf("[0x%X] Writing 0x%X to register 0x%X\n", addr, val, reg);
-    char pair[2];
-    pair[0] = reg & 0xFF;
-    pair[1] = val & 0xFF;
-    i2c_write(handle, (unsigned char *)pair, 2);
-}
 
 int main(int argc, char *argv[]) {
     int handle;
